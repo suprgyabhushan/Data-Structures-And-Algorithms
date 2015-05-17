@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int counter=0;
+struct node
+	{
+	int data;
+	struct node * next;
+	};
+struct node * top = NULL;
+void push(int x)
+	{
+	struct node * temp;
+	temp = (struct node *)malloc(sizeof(struct node *));
+	temp->data=x;
+	temp->next=top;
+	top=temp;
+	}
+void pop()
+	{
+	struct node * temp;
+	if(top == NULL) return;
+	temp = top;
+	top = top ->next;
+	free(temp);
+	}
+int main(int argc,char * argv[])
+{
+	int seq[1050];
+	int i=0,totallength,j,flag;
+	FILE *in=fopen(argv[1],"r");
+	while(1)
+	{
+		fscanf(in,"%d\n",&seq[i]);
+		i++;
+		if(feof(in)) break;
+	}
+	totallength=i;
+	i=0;
+	while(i<totallength)
+	{
+		if(top==NULL)
+		{
+			for(j=0;j<seq[i];j++)
+			{
+				push(j);
+				//counter++;
+			}	
+			i++;
+		}
+		else
+		{
+			int topnumber;
+			topnumber=top->data;
+			if(topnumber>seq[i])
+			{
+				flag=1;
+				break;
+			}
+			else if(topnumber==seq[i])
+			{
+				pop();
+				i++;
+			}
+			else if(topnumber<seq[i])
+			{
+				for(j=topnumber;j<seq[i];j++)
+				{
+					push(j);
+					//counter++;
+				}
+				i++;
+			}
+		}
+	}
+	if(flag==1)
+		printf("NO\n");
+	else
+		printf("YES\n");
+	return 0;
+}
+	
