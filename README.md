@@ -6,7 +6,7 @@ All my codes done in the Course DSA during the second semester at IIIT Bangalore
 Here I have put different codes for all the assignments I did in the DSA Course :
 
 1. Friends_of_Friends - A sample file is given where each person has been represented as a number. If in a command line argument a person number is given I have to give all its friends.
-   But the definition of friend here is differet. If 1 has friends 2 and 3 then friends of 1 are also friends of 2 and 3 and so on.
+   But the definition of friend here is different. If 1 has friends 2 and 3 then friends of 1 are also friends of 2 and 3 and so on.
 
 2. Tribonacci - Finding f(n)=f(n-1)+(n-2)+f(n-3) where n is a 1000 digit integer and f(n-1), f(n-2), f(n-3) are given.
 
