@@ -1,5 +1,5 @@
 # Data-Structures-And-Algorithms
-All my codes done in the Course DSA during the second semester at IIIT Bangalore.
+All my codes done in the  DSA Course during the second semester at IIIT Bangalore.
 
 #Codes Explanation
 
